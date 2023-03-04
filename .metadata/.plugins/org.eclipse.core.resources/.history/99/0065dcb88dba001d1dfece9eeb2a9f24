@@ -1,0 +1,82 @@
+package com.example.restservice.domain;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+
+
+
+public class Pessoa implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	
+	private Integer id;
+	
+	private String nome;
+	private Integer idade;
+	private Integer posicaonafila;
+	
+	public Pessoa () {
+		
+	}
+
+	public Pessoa(String nome, Integer id, Integer idade, Integer posicaonafila) {
+		super();
+		this.nome = nome;
+		this.id = id;
+		this.idade = idade;
+		this.posicaonafila = posicaonafila;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getIdade() {
+		return idade;
+	}
+
+	public void setIdade(Integer idade) {
+		this.idade = idade;
+	}
+
+	public Integer getPosicaonafila() {
+		return posicaonafila;
+	}
+
+	public void setPosicaonafila(Integer posicaonafila) {
+		this.posicaonafila = posicaonafila;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		return Objects.equals(id, other.id);
+	}
+	
+	
+
+}
